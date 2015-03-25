@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-xs-4offset-3 text-center">
             <h2>
-<?php echo i18n::__('editRaza', null, 'raza') ?> <?php echo $objRaza[0]->$nombre_raza ?>
+<?php echo i18n::__('editRaza', null, 'raza') ?> <?php echo $objRaza[0]->$desc_raza ?>
             </h2>
         </div>
     </div>

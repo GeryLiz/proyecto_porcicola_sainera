@@ -26,7 +26,7 @@ class editRazaActionClass extends controllerClass implements controllerActionInt
             razaTableClass::ID => request::getInstance()->getRequest(razaTableClass::ID)
         );
         
-        $this->objRaza = razaTableClass::getAll($fields, false, null ,null, null, null, $where);
+        $this->objRaza = razaTableClass::getAll($fields, true, null ,null, null, null, $where);
         $this->defineView('editRaza', 'porcino', session::getInstance()->getFormatOutput());
       } else {
         routing::getInstance()->redirect('porcino', 'indexRaza');

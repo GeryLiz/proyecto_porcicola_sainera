@@ -27,6 +27,34 @@ class indexHojaDeVidaActionClass extends controllerClass implements controllerAc
                 }
             }
             
+               if(request::getInstance()->hasPost('filter')){
+                $filter = request::getInstance()->getPost('filter');
+                if (isset($filter['peso']) and $filter['peso'] !== null and $filter['peso'] !== ''){
+                    $where[hojaDeVidaTableClass::PESO] = $filter['peso'];
+                }
+            }
+            
+                if(request::getInstance()->hasPost('filter')){
+                $filter = request::getInstance()->getPost('filter');
+                if (isset($filter['genero']) and $filter['genero'] !== null and $filter['genero'] !== ''){
+                    $where[hojaDeVidaTableClass::GENERO] = $filter['genero'];
+                }
+            }
+            
+                 if(request::getInstance()->hasPost('filter')){
+                $filter = request::getInstance()->getPost('filter');
+                if (isset($filter['cant_partos']) and $filter['cant_partos'] !== null and $filter['cant_partos'] !== ''){
+                    $where[hojaDeVidaTableClass::PARTOS] = $filter['cant_partos'];
+                }
+            }
+            
+                if(request::getInstance()->hasPost('filter')){
+                $filter = request::getInstance()->getPost('filter');
+                if (isset($filter['fecha_ingreso']) and $filter['fecha_ingreso'] !== null and $filter['fecha_ingreso'] !== ''){
+                    $where[hojaDeVidaTableClass::INGRESO] = $filter['fecha_ingreso'];
+                }
+            }
+            
             $fields = array(
                 hojaDeVidaTableClass::ID,
                 hojaDeVidaTableClass::EDAD,

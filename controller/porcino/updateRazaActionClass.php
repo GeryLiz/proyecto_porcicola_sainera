@@ -7,6 +7,8 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
+
 
 /**
  * Description of ejemploClass
@@ -25,23 +27,28 @@ class updateRazaActionClass extends controllerClass implements controllerActionI
                 $ids = array(
                     razaTableClass::ID => $id
                 );
+                
+                 if($desc_raza == '' or !isset($desc_raza) or $desc_raza == null){
+                    throw new PDOException(i18n::__(10004, null, 'errors'));
+                }
+              
+                
                 $data = array(
                     razaTableClass::DESCRIPCION => $desc_raza
                 );
 
 
                 razaTableClass::update($ids, $data);
-                
-//                departamentoTableClass::update($ids, $data);
+                   session::getInstance()->setSuccess("Registro Actualizado");
+                log::register(i18n::__('update'), razaTableClass::getNameTable());
+                routing::getInstance()->redirect('porcino', 'indexRaza');
+
             }
 
             routing::getInstance()->redirect('porcino', 'indexRaza');
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo '<pre>';
-            print_r($exc->getTrace());
-            echo '</pre>';
+           session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
 

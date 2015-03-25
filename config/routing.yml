@@ -335,6 +335,9 @@ raza_create:
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 raza_edit:
   url:    /raza/editar
@@ -349,6 +352,9 @@ raza_update:
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 raza_delete:
   url:    /raza/eliminar
@@ -438,6 +444,10 @@ modulo_create:
   load:
     - model/base/moduloBaseTableClass.php
     - model/moduloTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
 
 modulo_edit:
   url:    /modulo/editar
@@ -452,6 +462,9 @@ modulo_update:
   load:
     - model/base/moduloBaseTableClass.php
     - model/moduloTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 modulo_delete:
   url:    /modulo/eliminar
@@ -584,9 +597,7 @@ hojaDeVida_update:
   load:
     - model/base/hojaDeVidaBaseTableClass.php
     - model/hojaDeVidaTableClass.php
-    - hooks/logHookClass.php
-    - model/base/bitacoraBaseTableClass.php
-    - model/bitacoraTableClass.php
+   
 
 hojaDeVida_delete:
   url:    /hojaDeVida/eliminar

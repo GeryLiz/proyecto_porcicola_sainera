@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
@@ -23,6 +24,19 @@ class createModuloActionClass extends controllerClass implements controllerActio
                 $ubic_modulo = request::getInstance()->getPost(moduloTableClass::getNameField(moduloTableClass::UBICACION, true));
                 $tamaño_modulo = request::getInstance()->getPost(moduloTableClass::getNameField(moduloTableClass::TAMAÑO, true));
 
+                  if($desc_modulo == '' or !isset($desc_modulo) or $desc_modulo == null){
+                    throw new PDOException(i18n::__(10004, null, 'errors'));
+                }
+              
+                if($ubic_modulo == '' or !isset($ubic_modulo) or $ubic_modulo == null){
+                    throw new PDOException(i18n::__(10004, null, 'errors')); 
+                }
+              
+                if($tamaño_modulo == '' or !isset($tamaño_modulo) or $tamaño_modulo == null){
+                    throw new PDOException(i18n::__(10004, null, 'errors')); 
+                }
+                 
+                
                 $data = array(
                     moduloTableClass::DESCRIPCION => $desc_modulo,
                     moduloTableClass::UBICACION => $ubic_modulo,
@@ -30,16 +44,15 @@ class createModuloActionClass extends controllerClass implements controllerActio
                 );
 
                 moduloTableClass::insert($data);
-                routing::getInstance()->redirect('modulo', 'index');
+                session::getInstance()->setSuccess("Registro Insertado");
+                log::register(i18n::__('create'), moduloTableClass::getNameTable());
+                routing::getInstance()->redirect('porcino', 'indexModulo');
             } else {
-                routing::getInstance()->redirect('modulo', 'index');
+                routing::getInstance()->redirect('porcino', 'indexModulo');
             }
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo '<pre>';
-            print_r($exc->getTrace());
-            echo '</pre>';
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
 

@@ -53,6 +53,38 @@ class createHojaDeVidaActionClass extends controllerClass implements controllerA
                 if($genero_porcino !== 'M' or $genero_porcino !== 'H'){
                                         throw new PDOException(i18n::__(10003, null, 'errors')); 
                 }
+                 if(!is_numeric($cant_partos)){
+                    throw new PDOException(i18n::__(10005, null, 'errors') . ' '. 'en el campo cantidad de partos');
+                }
+                
+                if($fecha_ingreso == '' or !isset($fecha_ingreso) or $fecha_ingreso == null){
+                    throw new PDOException(i18n::__(10004, null, 'errors')); 
+                }
+                 if($id_estado== '' or !isset($id_estado) or $id_estado == null){
+                    throw new PDOException(i18n::__(10004, null, 'errors')); 
+                }
+                
+                if($id_estado !== 'true' or $id_estado !== 'false'){
+                                        throw new PDOException(i18n::__(10003, null, 'errors')); 
+                }
+                  if($id_raza== '' or !isset($id_raza) or $id_raza == null){
+                    throw new PDOException(i18n::__(10004, null, 'errors')); 
+                }
+                  if(!is_numeric($id_raza)){
+                    throw new PDOException(i18n::__(10005, null, 'errors') . ' '. 'en el campo id  raza');
+                }
+                   if($id_modulo== '' or !isset($id_modulo) or $id_modulo == null){
+                    throw new PDOException(i18n::__(10004, null, 'errors')); 
+                }
+                  if(!is_numeric($id_modulo)){
+                    throw new PDOException(i18n::__(10005, null, 'errors') . ' '. 'en el campo id  modulo');
+                }
+                      if($usuario_id== '' or !isset($usuario_id) or $usuario_id == null){
+                    throw new PDOException(i18n::__(10004, null, 'errors')); 
+                }
+                  if(!is_numeric($usuario_id)){
+                    throw new PDOException(i18n::__(10005, null, 'errors') . ' '. 'en el campo usuario');
+                }
                 
                 $data = array(
                     hojaDeVidaTableClass::EDAD => $edad_porcino,
