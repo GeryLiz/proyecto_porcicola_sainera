@@ -25,7 +25,7 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
           $ids = array(
               facturaCompraInsumoTableClass::ID => $id
           );
-          facturaCompraInsumoTableClass::delete($ids, false);
+          facturaCompraInsumoTableClass::delete($ids, true);
         }
         
         routing::getInstance()->redirect('facturaCompraInsumo', 'index');

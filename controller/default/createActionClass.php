@@ -31,6 +31,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             usuarioTableClass::PASSWORD => md5($password)
         );
         usuarioTableClass::insert($data);
+        session::getInstance()->setSuccess('Los datos fueron registrados de forma exitosa');
         routing::getInstance()->redirect('default', 'index');
       } else {
         routing::getInstance()->redirect('default', 'index');
@@ -38,6 +39,8 @@ class createActionClass extends controllerClass implements controllerActionInter
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');
+      session::getInstance()->setError('Error');
+      
     }
   }
 

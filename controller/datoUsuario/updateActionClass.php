@@ -24,11 +24,11 @@ class updateActionClass extends controllerClass implements controllerActionInter
 //        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
                 $id = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ID, true));
                 $nombre = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::NOMBRE, true));
-$apellidos = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDOS, true));
+                $apellidos = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDOS, true));
                 $telefono = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TELEFONO, true));
                 $direccion = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::DIRECCION, true));
                 $cedula = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::CEDULA, true));
-                
+
                 $ids = array(
                     datoUsuarioTableClass::ID => $id
                 );
@@ -54,5 +54,3 @@ $apellidos = request::getInstance()->getPost(datoUsuarioTableClass::getNameField
     }
 
 }
-
-

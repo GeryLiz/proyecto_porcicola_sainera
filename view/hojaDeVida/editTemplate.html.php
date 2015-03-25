@@ -11,6 +11,6 @@
         </div>
     </div>
 </div>
-<?php view::includePartial('hojaDeVida/formHojaDeVida', array('objHojaDeVida' => $objHojaDeVida)) ?>
+<?php view::includePartial('hojaDeVida/formHojaDeVida', array('objHojaDeVida' => $objHojaDeVida, 'objRaza' => $objRaza, 'objModulo' => $objModulo, 'objUsuario' => $objUsuario)) ?>
 
 

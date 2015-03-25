@@ -25,7 +25,7 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
           $ids = array(
               montarTableClass::ID => $id
           );
-          montarTableClass::delete($ids, false);
+          montarTableClass::delete($ids, true);
         }
         
         routing::getInstance()->redirect('montar', 'index');

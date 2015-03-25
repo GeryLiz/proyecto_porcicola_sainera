@@ -1,12 +1,11 @@
 <?php
 
 use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 <div class="container">
     <div class="row">
         <div class="col-xs-4offset-3">
-            <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('raza', ((isset($objRaza)) ? 'update' : 'create')) ?>">
+            <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('porcino', ((isset($objRaza)) ? 'updateRaza' : 'createRaza')) ?>">
 <?php if (isset($objRaza) == true): ?>
                     <input name="<?php echo razaTableClass::getNameField(razaTableClass::ID, true) ?>" value="<?php echo $objRaza[0]->id ?>" type="hidden">
                             <?php endif ?>

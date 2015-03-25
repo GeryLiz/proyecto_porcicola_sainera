@@ -9,8 +9,9 @@ use mvc\config\configClass as config;
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
 class usuarioTableClass extends usuarioBaseTableClass {
+    
 
-  public static function verifyUser($usuario, $password) {
+    public static function verifyUser($usuario, $password) {
     try {
       $sql = 'SELECT ' . credencialTableClass::getNameField(credencialTableClass::NOMBRE) . ' as credencial,
 	' . usuarioTableClass::getNameField(usuarioTableClass::USER) . ' as usuario,

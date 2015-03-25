@@ -17,3 +17,109 @@ default:
       - [admin, usuario]
   insert:
     security: true
+
+porcino:
+  indexHojaDeVida:
+    security: true
+    credentials: 
+      - [admin]
+      
+  insertHojaDeVida:
+    security: true
+    credentials: 
+      - [admin]
+      
+  createHojaDeVida:
+    security: true
+    credentials: 
+      - [admin]
+      
+  editHojaDeVida:
+    security: true
+    credentials: 
+      - [admin]
+      
+  updateHojaDeVida:
+    security: true
+    credentials: 
+      - [admin]
+      
+  deleteHojaDeVida:
+    security: true
+    credentials: 
+      - [admin]
+      
+  deleteSelectHojaDeVida:
+    security: true
+    credentials:
+      - [admin]
+      
+  indexRaza:
+    security: true
+    credentials: 
+      - [admin]
+      
+  insertRaza:
+    security: true
+    credentials: 
+      - [admin]
+      
+  createRaza:
+    security: true
+    credentials: 
+      - [admin]
+      
+  editRaza:
+    security: true
+    credentials: 
+      - [admin]
+      
+  updateRaza:
+    security: true
+    credentials: 
+      - [admin]
+      
+  deleteRaza:
+    security: true
+    credentials: 
+      - [admin]
+      
+  deleteSelectRaza:
+    security: true
+    credentials:
+      - [admin]
+      
+  indexModulo:
+    security: true
+    credentials: 
+      - [admin]
+      
+  insertModulo:
+    security: true
+    credentials: 
+      - [admin]
+      
+  createModulo:
+    security: true
+    credentials: 
+      - [admin]
+      
+  editModulo:
+    security: true
+    credentials: 
+      - [admin]
+      
+  updateModulo:
+    security: true
+    credentials: 
+      - [admin]
+      
+  deleteModulo:
+    security: true
+    credentials: 
+      - [admin]
+      
+  deleteSelectModulo:
+    security: true
+    credentials:
+      - [admin]

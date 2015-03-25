@@ -20,7 +20,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             if (request::getInstance()->isMethod('POST')) {
 
                 $id_fact = request::getInstance()->getPost(detalleFacturaCompraInsumoTableClass::getNameField(detalleFacturaCompraInsumoTableClass::ID_FACT, true));
-                $id = request::getInstance()->getPost(detalleFacturaCompraInsumoTableClass::getNameField(detalleFacturaCompraInsumoTableClass::ID, true));
+                $id_insumo = request::getInstance()->getPost(detalleFacturaCompraInsumoTableClass::getNameField(detalleFacturaCompraInsumoTableClass::ID_INSUMO, true));
                 $cantidad = request::getInstance()->getPost(detalleFacturaCompraInsumoTableClass::getNameField(detalleFacturaCompraInsumoTableClass::CANTIDAD, true));
                 $precio = request::getInstance()->getPost(detalleFacturaCompraInsumoTableClass::getNameField(detalleFacturaCompraInsumoTableClass::PRECIO, true));
                 $subtotal = request::getInstance()->getPost(detalleFacturaCompraInsumoTableClass::getNameField(detalleFacturaCompraInsumoTableClass::SUBTOTAL, true));
@@ -31,7 +31,7 @@ class createActionClass extends controllerClass implements controllerActionInter
 
                 $data = array(
                 detalleFacturaCompraInsumoTableClass::ID_FACT => $id_fact,
-                detalleFacturaCompraInsumoTableClass::ID => $id,
+                detalleFacturaCompraInsumoTableClass::ID_INSUMO => $id_insumo,
                 detalleFacturaCompraInsumoTableClass::CANTIDAD => $cantidad,
                 detalleFacturaCompraInsumoTableClass::PRECIO => $precio,
                 detalleFacturaCompraInsumoTableClass::SUBTOTAL => $subtotal,

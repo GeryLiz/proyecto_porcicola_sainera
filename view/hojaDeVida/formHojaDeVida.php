@@ -1,8 +1,5 @@
-<?php
-
-use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 <?php $nombreRaza = razaTableClass::DESCRIPCION ?>
 <?php $idRaza = razaTableClass::ID ?>
 <?php $nombreModulo = moduloTableClass::DESCRIPCION ?>
@@ -13,7 +10,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <div class="container">
     <div class="row">
         <div class="col-xs-4offset-3">
-            <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('hojaDeVida', ((isset($objHojaDeVida)) ? 'update' : 'create')) ?>">
+            <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('porcino', ((isset($objHojaDeVida)) ? 'updateHojaDeVida' : 'createHojaDeVida')) ?>">
     <?php if (isset($objHojaDeVida) == true): ?>
         <input name="<?php echo hojaDeVidaTableClass::getNameField(hojaDeVidaTableClass::ID, true) ?>" value="<?php echo $objHojaDeVida[0]->id ?>" type="hidden">
     <?php endif ?>
@@ -39,7 +36,11 @@ use mvc\i18n\i18nClass as i18n ?>
                     <?php echo i18n::__('gender', null, 'hojaDeVida') ?>:
                 </th>
                 <th>
-                       <input placeholder="<?php echo ((isset($objHojaDeVida) == true) ? $objHojaDeVida[0]->genero_porcino : '') ?>" type="text" name="<?php echo hojaDeVidaTableClass::getNameField(hojaDeVidaTableClass::GENERO, true) ?>">  
+                    <select name="<?php echo hojaDeVidaTableClass::getNameField(hojaDeVidaTableClass::GENERO, true) ?>">
+                        <option>Seleccione el genero</option>
+                        <option value="M">Macho</option>
+                        <option value="H">Hembra</option>
+                    </select>
                 </th>
             </tr>
             <tr>
@@ -47,8 +48,10 @@ use mvc\i18n\i18nClass as i18n ?>
                    <?php echo i18n::__('quantity_births', null, 'hojaDeVida') ?>: 
                 </th>
                 <th>
-                         <input placeholder="<?php echo ((isset($objHojaDeVida) == true) ? $objHojaDeVida[0]->cant_partos : '') ?>" type="text" name="<?php echo hojaDeVidaTableClass::getNameField(hojaDeVidaTableClass::PARTOS, true) ?>">
-                </th>
+                    
+                  <input placeholder="<?php echo ((isset($objHojaDeVida) == true) ? $objHojaDeVida[0]->cant_partos : '') ?>" type="text"      name="<?php echo hojaDeVidaTableClass::getNameField(hojaDeVidaTableClass::PARTOS, true) ?>">
+                      
+                        </th>
             </tr>
             <tr>
                 <th>
@@ -63,7 +66,11 @@ use mvc\i18n\i18nClass as i18n ?>
                    <?php echo i18n::__('state', null, 'montar') ?>: 
                 </th>
                 <th>
-                         <input placeholder="<?php echo ((isset($objHojaDeVida) == true) ? $objHojaDeVida[0]->id_estado : '') ?>" type="text" name="<?php echo hojaDeVidaTableClass::getNameField(hojaDeVidaTableClass::ESTADO, true) ?>">
+                 <select  name="<?php echo hojaDeVidaTableClass::getNameField(hojaDeVidaTableClass::ESTADO, true) ?>">
+                            <option>...</option>
+                            <option value="true">Activo</option>
+                            <option value="false">Inactivo</option>
+                        </select>
                 </th>
             </tr>
             <tr>

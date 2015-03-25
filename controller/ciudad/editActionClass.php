@@ -32,8 +32,8 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         departamentoTableClass::DESCRIPCION
         );
         
-        $this->objDepto = departamentoTableClass::getAll($fieldsDepto, false);
-        $this->objCiudad = ciudadTableClass::getAll($fields, false, null ,null, null, null, $where);
+        $this->objDepto = departamentoTableClass::getAll($fieldsDepto, true);
+        $this->objCiudad = ciudadTableClass::getAll($fields, true, null ,null, null, null, $where);
         $this->defineView('edit', 'ciudad', session::getInstance()->getFormatOutput());
       } else {
         routing::getInstance()->redirect('ciudad', 'index');

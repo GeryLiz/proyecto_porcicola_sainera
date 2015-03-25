@@ -3,14 +3,14 @@
 use mvc\config\configClass as config;
 use mvc\session\sessionClass as session;
 
-config::setRowGrid(10);
+config::setRowGrid(3);
 
 config::setDbHost('localhost');
 config::setDbDriver('pgsql'); // pgsql
 config::setDbName('proyecto_final');
 config::setDbPort(5432); // 5432
 config::setDbUser('postgres');
-config::setDbPassword('diaz');
+config::setDbPassword('sena');
 // Esto solo es necesario en caso de necesitar un socket para la DB
 config::setDbUnixSocket(null);
 
@@ -29,7 +29,7 @@ if (config::getDbUnixSocket() !== null) {
   );
 }
 
-config::setPathAbsolute('C:/xampp/htdocs/proyecto_porcicola_sainera/');
+config::setPathAbsolute('/var/www/html/proyecto_porcicola_sainera/');
 config::setUrlBase('http://localhost/proyecto_porcicola_sainera/web/');
 
 config::setScope('dev'); // prod

@@ -23,9 +23,9 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
         
         foreach ($idsToDelete as $item) {
           $ids = array(
-          detalleFacturaCompraInsumoTableClass::ITEM => $item
+          detalleFacturaCompraInsumoTableClass::ID => $id
           );
-          detalleFacturaCompraInsumoTableClass::delete($ids, false);
+          detalleFacturaCompraInsumoTableClass::delete($ids, true);
         }
         
         routing::getInstance()->redirect('detalleFacturaCompraInsumo', 'index');

@@ -86,7 +86,7 @@ default_update:
 
 default_delete:
   url:    /usuario/eliminar
-  param:  { module: default, action: delete, format: html }
+  param:  { module: default, action: delete, format: json }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
@@ -144,7 +144,7 @@ credencial_update:
 
 credencial_delete:
   url:    /credencial/eliminar
-  param:  { module: credencial, action: delete, format: html }
+  param:  { module: credencial, action: delete, format: json }
   load:
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
@@ -194,7 +194,7 @@ datoUsuario_update:
 
 datoUsuario_delete:
   url:    /datoUsuario/eliminar
-  param:  { module: datoUsuario, action: delete, format: html }
+  param:  { module: datoUsuario, action: delete, format: json }
   load:
     - model/base/datoUsuarioBaseTableClass.php
     - model/datoUsuarioTableClass.php
@@ -246,7 +246,7 @@ departamento_update:
 
 departamento_delete:
   url:    /departamento/eliminar
-  param:  { module: departamento, action: delete, format: html }
+  param:  { module: departamento, action: delete, format: json }
   load:
     - model/base/departamentoBaseTableClass.php
     - model/departamentoTableClass.php
@@ -301,7 +301,7 @@ ciudad_update:
 
 ciudad_delete:
   url:    /ciudad/eliminar
-  param:  { module: ciudad, action: delete, format: html }
+  param:  { module: ciudad, action: delete, format: json }
   load:
     - model/base/ciudadBaseTableClass.php
     - model/ciudadTableClass.php
@@ -317,49 +317,49 @@ ciudad_deleteSelect:
  
 raza_index:
   url:    /raza/index
-  param:  { module: raza, action: index, format: html }
+  param:  { module: porcino, action: indexRaza, format: html }
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
 
 raza_insert:
   url:    /raza/insertar
-  param:  { module: raza, action: insert, format: html }
+  param:  { module: porcino, action: insertRaza, format: html }
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
 
 raza_create:
   url:    /raza/crear
-  param:  { module: raza, action: create, format: html }
+  param:  { module: porcino, action: createRaza, format: html }
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
 
 raza_edit:
   url:    /raza/editar
-  param:  { module: raza, action: edit, format: html }
+  param:  { module: porcino, action: editRaza, format: html }
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
 
 raza_update:
   url:    /raza/actualizar
-  param:  { module: raza, action: update, format: html }
+  param:  { module: porcino, action: updateRaza, format: html }
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
 
 raza_delete:
   url:    /raza/eliminar
-  param:  { module: raza, action: delete, format: html }
+  param:  { module: porcino, action: deleteRaza, format: json }
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
 
 raza_deleteSelect:
   url:    /raza/eliminarSeleccion
-  param:  { module: raza, action: deleteSelect, format: html }
+  param:  { module: porcino, action: deleteSelectRaza, format: html }
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
@@ -404,7 +404,7 @@ bodega_update:
 
 bodega_delete:
   url:    /bodega/eliminar
-  param:  { module: bodega, action: delete, format: html }
+  param:  { module: bodega, action: delete, format: json }
   load:
     - model/base/bodegaBaseTableClass.php
     - model/bodegaTableClass.php
@@ -420,49 +420,49 @@ bodega_deleteSelect:
  
 modulo_index:
   url:    /modulo/index
-  param:  { module: modulo, action: index, format: html }
+  param:  { module: porcino, action: indexModulo, format: html }
   load:
     - model/base/moduloBaseTableClass.php
     - model/moduloTableClass.php
 
 modulo_insert:
   url:    /modulo/insertar
-  param:  { module: modulo, action: insert, format: html }
+  param:  { module: porcino, action: insertModulo, format: html }
   load:
     - model/base/moduloBaseTableClass.php
     - model/moduloTableClass.php
 
 modulo_create:
   url:    /modulo/crear
-  param:  { module: modulo, action: create, format: html }
+  param:  { module: porcino, action: createModulo, format: html }
   load:
     - model/base/moduloBaseTableClass.php
     - model/moduloTableClass.php
 
 modulo_edit:
   url:    /modulo/editar
-  param:  { module: modulo, action: edit, format: html }
+  param:  { module: porcino, action: editModulo, format: html }
   load:
     - model/base/moduloBaseTableClass.php
     - model/moduloTableClass.php
 
 modulo_update:
   url:    /modulo/actualizar
-  param:  { module: modulo, action: update, format: html }
+  param:  { module: porcino, action: updateModulo, format: html }
   load:
     - model/base/moduloBaseTableClass.php
     - model/moduloTableClass.php
 
 modulo_delete:
   url:    /modulo/eliminar
-  param:  { module: modulo, action: delete, format: html }
+  param:  { module: porcino, action: deleteModulo, format: json }
   load:
     - model/base/moduloBaseTableClass.php
     - model/moduloTableClass.php
 
 modulo_deleteSelect:
   url:    /modulo/eliminarSeleccion
-  param:  { module: modulo, action: deleteSelect, format: html }
+  param:  { module: porcino, action: deleteSelectModulo, format: html }
   load:
     - model/base/moduloBaseTableClass.php
     - model/moduloTableClass.php
@@ -482,7 +482,10 @@ insumo_insert:
   load:
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
-
+    - model/base/lineaBaseTableClass.php
+    - model/lineaTableClass.php
+    - model/base/presentacionBaseTableClass.php
+    - model/presentacionTableClass.php
 insumo_create:
   url:    /insumo/crear
   param:  { module: insumo, action: create, format: html }
@@ -496,6 +499,10 @@ insumo_edit:
   load:
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
+    - model/base/lineaBaseTableClass.php
+    - model/lineaTableClass.php
+    - model/base/presentacionBaseTableClass.php
+    - model/presentacionTableClass.php
 
 insumo_update:
   url:    /insumo/actualizar
@@ -506,7 +513,7 @@ insumo_update:
 
 insumo_delete:
   url:    /insumo/eliminar
-  param:  { module: insumo, action: delete, format: html }
+  param:  { module: insumo, action: delete, format: json }
   load:
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
@@ -522,14 +529,20 @@ insumo_deleteSelect:
  
 hojaDeVida_index:
   url:    /hojaDeVida/index
-  param:  { module: hojaDeVida, action: index, format: html }
+  param:  { module: porcino, action: indexHojaDeVida, format: html }
   load:
     - model/base/hojaDeVidaBaseTableClass.php
     - model/hojaDeVidaTableClass.php
-
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/moduloBaseTableClass.php
+    - model/moduloTableClass.php
+    
 hojaDeVida_insert:
   url:    /hojaDeVida/insertar
-  param:  { module: hojaDeVida, action: insert, format: html }
+  param:  { module: porcino, action: insertHojaDeVida, format: html }
   load:
     - model/base/hojaDeVidaBaseTableClass.php
     - model/hojaDeVidaTableClass.php
@@ -542,35 +555,49 @@ hojaDeVida_insert:
 
 hojaDeVida_create:
   url:    /hojaDeVida/crear
-  param:  { module: hojaDeVida, action: create, format: html }
+  param:  { module: porcino, action: createHojaDeVida, format: html }
   load:
     - model/base/hojaDeVidaBaseTableClass.php
     - model/hojaDeVidaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 hojaDeVida_edit:
   url:    /hojaDeVida/editar
-  param:  { module: hojaDeVida, action: edit, format: html }
+  param:  { module: porcino, action: editHojaDeVida, format: html }
   load:
     - model/base/hojaDeVidaBaseTableClass.php
     - model/hojaDeVidaTableClass.php
-
+    - model/base/hojaDeVidaBaseTableClass.php
+    - model/hojaDeVidaTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/moduloBaseTableClass.php
+    - model/moduloTableClass.php
+    
 hojaDeVida_update:
   url:    /hojaDeVida/actualizar
-  param:  { module: hojaDeVida, action: update, format: html }
+  param:  { module: porcino, action: updateHojaDeVida, format: html }
   load:
     - model/base/hojaDeVidaBaseTableClass.php
     - model/hojaDeVidaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 hojaDeVida_delete:
   url:    /hojaDeVida/eliminar
-  param:  { module: hojaDeVida, action: delete, format: html }
+  param:  { module: porcino, action: deleteHojaDeVida, format: json }
   load:
     - model/base/hojaDeVidaBaseTableClass.php
     - model/hojaDeVidaTableClass.php
 
 hojaDeVida_deleteSelect:
   url:    /hojaDeVida/eliminarSeleccion
-  param:  { module: hojaDeVida, action: deleteSelect, format: html }
+  param:  { module: porcino, action: deleteSelectHojaDeVida, format: html }
   load:
     - model/base/hojaDeVidaBaseTableClass.php
     - model/hojaDeVidaTableClass.php
@@ -591,6 +618,10 @@ montar_insert:
   load:
     - model/base/montarBaseTableClass.php
     - model/montarTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - model/base/hojaDeVidaBaseTableClass.php
+    - model/hojaDeVidaTableClass.php
 
 montar_create:
   url:    /montar/crear
@@ -605,6 +636,10 @@ montar_edit:
   load:
     - model/base/montarBaseTableClass.php
     - model/montarTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - model/base/hojaDeVidaBaseTableClass.php
+    - model/hojaDeVidaTableClass.php
 
 montar_update:
   url:    /montar/actualizar
@@ -615,7 +650,7 @@ montar_update:
 
 montar_delete:
   url:    /montar/eliminar
-  param:  { module: montar, action: delete, format: html }
+  param:  { module: montar, action: delete, format: json }
   load:
     - model/base/montarBaseTableClass.php
     - model/montarTableClass.php
@@ -642,6 +677,8 @@ vacunacion_insert:
   load:
     - model/base/vacunacionBaseTableClass.php
     - model/vacunacionTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
 
 vacunacion_create:
   url:    /vacunacion/crear
@@ -656,6 +693,8 @@ vacunacion_edit:
   load:
     - model/base/vacunacionBaseTableClass.php
     - model/vacunacionTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
 
 vacunacion_update:
   url:    /vacunacion/actualizar
@@ -666,7 +705,7 @@ vacunacion_update:
 
 vacunacion_delete:
   url:    /vacunacion/eliminar
-  param:  { module: vacunacion, action: delete, format: html }
+  param:  { module: vacunacion, action: delete, format: json }
   load:
     - model/base/vacunacionBaseTableClass.php
     - model/vacunacionTableClass.php
@@ -694,6 +733,12 @@ detalleVacunacion_insert:
   load:
     - model/base/detalleVacunacionBaseTableClass.php
     - model/detalleVacunacionTableClass.php
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/hojaDeVidaBaseTableClass.php
+    - model/hojaDeVidaTableClass.php
      
 
 detalleVacunacion_create:
@@ -710,6 +755,12 @@ detalleVacunacion_edit:
   load:
     - model/base/detalleVacunacionBaseTableClass.php
     - model/detalleVacunacionTableClass.php
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/hojaDeVidaBaseTableClass.php
+    - model/hojaDeVidaTableClass.php
 
 detalleVacunacion_update:
   url:    /detalleVacunacion/actualizar
@@ -721,7 +772,7 @@ detalleVacunacion_update:
 
 detalleVacunacion_delete:
   url:    /detalleVacunacionFacturaCompraInsumo/eliminar
-  param:  { module: detalleVacunacion, action: delete, format: html }
+  param:  { module: detalleVacunacion, action: delete, format: json }
   load:
     - model/base/detalleVacunacionBaseTableClass.php
     - model/detalleVacunacionTableClass.php
@@ -781,7 +832,7 @@ facturaCompraInsumo_update:
 
 facturaCompraInsumo_delete:
   url:    /facturaCompraInsumo/eliminar
-  param:  { module: facturaCompraInsumo, action: delete, format: html }
+  param:  { module: facturaCompraInsumo, action: delete, format: json }
   load:
     - model/base/facturaCompraInsumoBaseTableClass.php
     - model/facturaCompraInsumoTableClass.php
@@ -808,6 +859,11 @@ detalleFacturaCompraInsumo_insert:
   load:
     - model/base/detalleFacturaCompraInsumoBaseTableClass.php
     - model/detalleFacturaCompraInsumoTableClass.php
+    - model/base/facturaCompraInsumoBaseTableClass.php
+    - model/facturaCompraInsumoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    
      
 
 detalleFacturaCompraInsumo_create:
@@ -824,6 +880,10 @@ detalleFacturaCompraInsumo_edit:
   load:
     - model/base/detalleFacturaCompraInsumoBaseTableClass.php
     - model/detalleFacturaCompraInsumoTableClass.php
+    - model/base/facturaCompraInsumoBaseTableClass.php
+    - model/facturaCompraInsumoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
 
 detalleFacturaCompraInsumo_update:
   url:    /detalleFacturaCompraInsumo/actualizar
@@ -835,7 +895,7 @@ detalleFacturaCompraInsumo_update:
 
 detalleFacturaCompraInsumo_delete:
   url:    /detalleFacturaCompraInsumo/eliminar
-  param:  { module: detalleFacturaCompraInsumo, action: delete, format: html }
+  param:  { module: detalleFacturaCompraInsumo, action: delete, format: json }
   load:
     - model/base/detalleFacturaCompraInsumoBaseTableClass.php
     - model/detalleFacturaCompraInsumoTableClass.php
@@ -862,6 +922,10 @@ gestacion_insert:
   load:
     - model/base/gestacionBaseTableClass.php
     - model/gestacionTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/hojaDeVidaBaseTableClass.php
+    - model/hojaDeVidaTableClass.php
 
 gestacion_create:
   url:    /gestacion/crear
@@ -876,6 +940,10 @@ gestacion_edit:
   load:
     - model/base/gestacionBaseTableClass.php
     - model/gestacionTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/hojaDeVidaBaseTableClass.php
+    - model/hojaDeVidaTableClass.php
 
 gestacion_update:
   url:    /gestacion/actualizar
@@ -886,7 +954,7 @@ gestacion_update:
 
 gestacion_delete:
   url:    /gestacion/eliminar
-  param:  { module: gestacion, action: delete, format: html }
+  param:  { module: gestacion, action: delete, format: json }
   load:
     - model/base/gestacionBaseTableClass.php
     - model/gestacionTableClass.php
@@ -897,3 +965,108 @@ gestacion_deleteSelect:
   load:
     - model/base/gestacionBaseTableClass.php
     - model/gestacionTableClass.php
+    
+##---------------------------------------------------------------------##
+ 
+linea_index:
+  url:    /linea/index
+  param:  { module: linea, action: index, format: html }
+  load:
+    - model/base/lineaBaseTableClass.php
+    - model/lineaTableClass.php
+
+linea_insert:
+  url:    /linea/insertar
+  param:  { module: linea, action: insert, format: html }
+  load:
+    - model/base/lineaBaseTableClass.php
+    - model/lineaTableClass.php
+  
+linea_create:
+  url:    /linea/crear
+  param:  { module: linea, action: create, format: html }
+  load:
+    - model/base/lineaBaseTableClass.php
+    - model/lineaTableClass.php
+
+linea_edit:
+  url:    /linea/editar
+  param:  { module: linea, action: edit, format: html }
+  load:
+    - model/base/lineaBaseTableClass.php
+    - model/lineaTableClass.php
+
+
+linea_update:
+  url:    /linea/actualizar
+  param:  { module: linea, action: update, format: html }
+  load:
+    - model/base/lineaBaseTableClass.php
+    - model/lineaTableClass.php
+
+linea_delete:
+  url:    /linea/eliminar
+  param:  { module: linea, action: delete, format: json }
+  load:
+    - model/base/lineaBaseTableClass.php
+    - model/lineaTableClass.php
+
+linea_deleteSelect:
+  url:    /linea/eliminarSeleccion
+  param:  { module: linea, action: deleteSelect, format: html }
+  load:
+    - model/base/lineaBaseTableClass.php
+    - model/lineaTableClass.php
+
+    
+##---------------------------------------------------------------------##
+ 
+presentacion_index:
+  url:    /presentacion/index
+  param:  { module: presentacion, action: index, format: html }
+  load:
+    - model/base/presentacionBaseTableClass.php
+    - model/presentacionTableClass.php
+
+presentacion_insert:
+  url:    /presentacion/insertar
+  param:  { module: presentacion, action: insert, format: html }
+  load:
+    - model/base/presentacionBaseTableClass.php
+    - model/presentacionTableClass.php
+  
+presentacion_create:
+  url:    /presentacion/crear
+  param:  { module: presentacion, action: create, format: html }
+  load:
+    - model/base/presentacionBaseTableClass.php
+    - model/presentacionTableClass.php
+
+presentacion_edit:
+  url:    /presentacion/editar
+  param:  { module: presentacion, action: edit, format: html }
+  load:
+    - model/base/presentacionBaseTableClass.php
+    - model/presentacionTableClass.php
+
+
+presentacion_update:
+  url:    /presentacion/actualizar
+  param:  { module: presentacion, action: update, format: html }
+  load:
+    - model/base/presentacionBaseTableClass.php
+    - model/presentacionTableClass.php
+
+presentacion_delete:
+  url:    /presentacion/eliminar
+  param:  { module: presentacion, action: delete, format: json }
+  load:
+    - model/base/presentacionBaseTableClass.php
+    - model/presentacionTableClass.php
+
+presentacion_deleteSelect:
+  url:    /presentacion/eliminarSeleccion
+  param:  { module: presentacion, action: deleteSelect, format: html }
+  load:
+    - model/base/presentacionBaseTableClass.php
+    - model/presentacionTableClass.php

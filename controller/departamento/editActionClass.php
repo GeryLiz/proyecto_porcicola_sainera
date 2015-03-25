@@ -26,7 +26,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
             departamentoTableClass::ID => request::getInstance()->getRequest(departamentoTableClass::ID)
         );
         
-        $this->objDepartamento = departamentoTableClass::getAll($fields, false, null ,null, null, null, $where);
+        $this->objDepartamento = departamentoTableClass::getAll($fields, true, null ,null, null, null, $where);
         $this->defineView('edit', 'departamento', session::getInstance()->getFormatOutput());
       } else {
         routing::getInstance()->redirect('departamento', 'index');

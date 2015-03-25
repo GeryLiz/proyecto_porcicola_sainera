@@ -30,8 +30,18 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         $where = array(
             montarTableClass::ID => request::getInstance()->getRequest(montarTableClass::ID)
         );
+        $fieldsPorcino = array(
+        hojaDeVidaTableClass::ID
+        );
+        $fieldsRaza = array(
+        razaTableClass::ID,
+        razaTableClass::DESCRIPCION
+        );
+                
         
-        $this->objMontar = montarTableClass::getAll($fields, false, null ,null, null, null, $where);
+        $this->objRaza = razaTableClass::getAll($fieldsRaza, true);
+        $this->objPorcino = hojaDeVidaTableClass::getAll($fieldsPorcino, true);
+        $this->objMontar = montarTableClass::getAll($fields, true, null ,null, null, null, $where);
         $this->defineView('edit', 'montar', session::getInstance()->getFormatOutput());
       } else {
         routing::getInstance()->redirect('montar', 'index');

@@ -35,7 +35,17 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                     gestacionTableClass::ID => request::getInstance()->getRequest(gestacionTableClass::ID)
                 );
 
-                $this->objGestacion = gestacionTableClass::getAll($fields, false, null, null, null, null, $where);
+                $fieldsPorcino = array(
+                hojaDeVidaTableClass::ID
+                );
+                $fieldsUsuario = array (
+                usuarioTableClass::ID,
+                usuarioTableClass::USER
+                );
+                
+                $this->objPorcino = hojaDeVidaTableClass::getAll($fieldsPorcino, true);
+                $this->objUsuario = usuarioTableClass::getAll($fieldsUsuario, true);
+                $this->objGestacion = gestacionTableClass::getAll($fields, true, null, null, null, null, $where);
                 $this->defineView('edit', 'gestacion', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('gestacion', 'index');

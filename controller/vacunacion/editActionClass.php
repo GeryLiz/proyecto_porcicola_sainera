@@ -27,7 +27,13 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         vacunacionTableClass::ID => request::getInstance()->getRequest(vacunacionTableClass::ID)
         );
         
-        $this->objVacunacion = vacunacionTableClass::getAll($fields, false, null ,null, null, null, $where);
+         $fieldsUsuario = array(
+         usuarioTableClass::ID,
+         usuarioTableClass::USER
+        );
+         
+        $this->objUsuario = usuarioTableClass::getAll($fieldsUsuario, true);
+        $this->objVacunacion = vacunacionTableClass::getAll($fields, true, null ,null, null, null, $where);
         $this->defineView('edit', 'vacunacion', session::getInstance()->getFormatOutput());
       } else {
         routing::getInstance()->redirect('vacunacion', 'index');

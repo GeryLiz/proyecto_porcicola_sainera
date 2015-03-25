@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-xs-4offset-3 text-center">
             <h2>
-<?php echo i18n::__('editModulo', null, 'modulo') ?> <?php echo $objModulo[0]->$desc_modulo ?>
+<?php echo i18n::__('edtiModulo', null, 'modulo') ?> <?php echo $objModulo[0]->$desc_modulo ?>
             </h2>
         </div>
     </div>

@@ -25,7 +25,7 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
           $ids = array(
               insumoTableClass::ID => $id
           );
-          insumoTableClass::delete($ids, false);
+          insumoTableClass::delete($ids, true);
         }
         
         routing::getInstance()->redirect('insumo', 'index');

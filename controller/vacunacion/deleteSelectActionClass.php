@@ -25,7 +25,7 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
           $ids = array(
               vacunacionTableClass::ID => $id
           );
-          vacunacionTableClass::delete($ids, false);
+          vacunacionTableClass::delete($ids, true);
         }
         
         routing::getInstance()->redirect('vacunacion', 'index');

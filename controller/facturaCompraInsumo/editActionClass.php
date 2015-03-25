@@ -35,7 +35,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         );
         
          $this->objUsuario = usuarioTableClass::getAll($fieldsUsuario, true);
-        $this->objFacturaCompraInsumo = facturaCompraInsumoTableClass::getAll($fields, false, null ,null, null, null, $where);
+        $this->objFacturaCompraInsumo = facturaCompraInsumoTableClass::getAll($fields, true, null ,null, null, null, $where);
         $this->defineView('edit', 'facturaCompraInsumo', session::getInstance()->getFormatOutput());
       } else {
         routing::getInstance()->redirect('facturaCompraInsumo', 'index');

@@ -7,7 +7,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <div class="container">
     <div class="row">
         <div class="col-xs-4offset-3">
-            <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('modulo', ((isset($objModulo)) ? 'update' : 'create')) ?>">
+            <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('porcino', ((isset($objModulo)) ? 'updateModulo' : 'createModulo')) ?>">
 <?php if (isset($objModulo) == true): ?>
                     <input name="<?php echo moduloTableClass::getNameField(moduloTableClass::ID, true) ?>" value="<?php echo $objModulo[0]->id ?>" type="hidden">
                             <?php endif ?>

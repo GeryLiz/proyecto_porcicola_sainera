@@ -25,7 +25,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 detalleVacunacionTableClass::CANTIDAD
             );
 
-            $this->objDetalleVacunacion = detalleVacunacionTableClass::getAll($fields, false);
+            $this->objDetalleVacunacion = detalleVacunacionTableClass::getAll($fields, true);
             $this->defineView('index', 'detalleVacunacion', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();

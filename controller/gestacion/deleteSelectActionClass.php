@@ -25,7 +25,7 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
                     $ids = array(
                         gestacionTableClass::ID => $id
                     );
-                    gestacionTableClass::delete($ids, false);
+                    gestacionTableClass::delete($ids, true);
                 }
 
                 routing::getInstance()->redirect('gestacion', 'index');

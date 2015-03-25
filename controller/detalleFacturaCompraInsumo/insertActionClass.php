@@ -15,18 +15,26 @@ use mvc\i18n\i18nClass as i18n;
  */
 class insertActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      $this->defineView('insert', 'detalleFacturaCompraInsumo', session::getInstance()->getFormatOutput());
-    } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+    public function execute() {
+        try {
+            $fieldsFactura = array(
+                facturaCompraInsumoTableClass::ID
+            );
+            $fieldsInsumo = array(
+                insumoTableClass::ID,
+                insumoTableClass::DESCRIPCION
+            );
+
+            $this->objFactura = facturaCompraInsumoTableClass::getAll($fieldsFactura,  true);
+            $this->objInsumo = insumoTableClass::getAll($fieldsInsumo, true);
+            $this->defineView('insert', 'detalleFacturaCompraInsumo', session::getInstance()->getFormatOutput());
+        } catch (PDOException $exc) {
+            echo $exc->getMessage();
+            echo '<br>';
+            echo '<pre>';
+            print_r($exc->getTrace());
+            echo '</pre>';
+        }
     }
-  }
 
 }
-
-

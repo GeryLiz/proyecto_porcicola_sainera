@@ -23,7 +23,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
 //        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
 //        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
                 $id_fact = request::getInstance()->getPost(detalleFacturaCompraInsumoTableClass::getNameField(detalleFacturaCompraInsumoTableClass::ID_FACT, true));
-                $id = request::getInstance()->getPost(detalleFacturaCompraInsumoTableClass::getNameField(detalleFacturaCompraInsumoTableClass::ID, true));
+                $id_insumo = request::getInstance()->getPost(detalleFacturaCompraInsumoTableClass::getNameField(detalleFacturaCompraInsumoTableClass::ID_INSUMO, true));
                 $cantidad = request::getInstance()->getPost(detalleFacturaCompraInsumoTableClass::getNameField(detalleFacturaCompraInsumoTableClass::CANTIDAD, true));
                 $precio = request::getInstance()->getPost(detalleFacturaCompraInsumoTableClass::getNameField(detalleFacturaCompraInsumoTableClass::PRECIO, true));
                 $subtotal = request::getInstance()->getPost(detalleFacturaCompraInsumoTableClass::getNameField(detalleFacturaCompraInsumoTableClass::SUBTOTAL, true));
@@ -31,11 +31,11 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $fecha_vencimiento = request::getInstance()->getPost(detalleFacturaCompraInsumoTableClass::getNameField(detalleFacturaCompraInsumoTableClass::VENCIMIENTO, true));
 
                 $ids = array(
-                    detalleFacturaCompraInsumoTableClass::ITEM
+                    detalleFacturaCompraInsumoTableClass::ID
                 );
                 $data = array(
                     detalleFacturaCompraInsumoTableClass::ID_FACT => $id_fact,
-                    detalleFacturaCompraInsumoTableClass::ID => $id,
+                    detalleFacturaCompraInsumoTableClass::ID_INSUMO => $id_insumo,
                     detalleFacturaCompraInsumoTableClass::CANTIDAD => $cantidad,
                     detalleFacturaCompraInsumoTableClass::PRECIO => $precio,
                     detalleFacturaCompraInsumoTableClass::ID => $subtotal,
