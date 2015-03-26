@@ -16,7 +16,7 @@ use mvc\i18n\i18nClass as i18n;
 class editRazaActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
-    try {
+    try { 
       if (request::getInstance()->hasRequest(razaTableClass::ID)) {
         $fields = array(
             razaTableClass::ID,
@@ -27,7 +27,7 @@ class editRazaActionClass extends controllerClass implements controllerActionInt
         );
         
         $this->objRaza = razaTableClass::getAll($fields, true, null ,null, null, null, $where);
-        $this->defineView('editRaza', 'porcino', session::getInstance()->getFormatOutput());
+        $this->defineView('edit', 'raza', session::getInstance()->getFormatOutput());
       } else {
         routing::getInstance()->redirect('porcino', 'indexRaza');
       }

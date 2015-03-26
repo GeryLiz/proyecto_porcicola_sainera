@@ -321,6 +321,9 @@ raza_index:
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 raza_insert:
   url:    /raza/insertar
@@ -362,6 +365,9 @@ raza_delete:
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 raza_deleteSelect:
   url:    /raza/eliminarSeleccion
@@ -369,6 +375,9 @@ raza_deleteSelect:
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
     
 ##---------------------------------------------------------------------##
@@ -430,6 +439,9 @@ modulo_index:
   load:
     - model/base/moduloBaseTableClass.php
     - model/moduloTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 modulo_insert:
   url:    /modulo/insertar
@@ -472,6 +484,9 @@ modulo_delete:
   load:
     - model/base/moduloBaseTableClass.php
     - model/moduloTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 modulo_deleteSelect:
   url:    /modulo/eliminarSeleccion
@@ -479,6 +494,9 @@ modulo_deleteSelect:
   load:
     - model/base/moduloBaseTableClass.php
     - model/moduloTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 ##---------------------------------------------------------------------##
  
@@ -552,6 +570,9 @@ hojaDeVida_index:
     - model/usuarioTableClass.php
     - model/base/moduloBaseTableClass.php
     - model/moduloTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 hojaDeVida_insert:
   url:    /hojaDeVida/insertar
@@ -597,6 +618,9 @@ hojaDeVida_update:
   load:
     - model/base/hojaDeVidaBaseTableClass.php
     - model/hojaDeVidaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
    
 
 hojaDeVida_delete:
@@ -605,6 +629,9 @@ hojaDeVida_delete:
   load:
     - model/base/hojaDeVidaBaseTableClass.php
     - model/hojaDeVidaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 hojaDeVida_deleteSelect:
   url:    /hojaDeVida/eliminarSeleccion
@@ -612,7 +639,19 @@ hojaDeVida_deleteSelect:
   load:
     - model/base/hojaDeVidaBaseTableClass.php
     - model/hojaDeVidaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
+hojaDeVida_reporte:
+  url:    /hojaDeVida/reporte
+  param:  { module: porcino, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    
+hojaDeVida_deleteFilters:
+  url:     /borrar_filtros
+  param: { module: porcino, action: deleteFilters, format: html }
     
 ##---------------------------------------------------------------------##
  

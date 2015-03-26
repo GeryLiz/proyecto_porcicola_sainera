@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
@@ -27,17 +28,15 @@ class deleteSelectHojaDeVidaActionClass extends controllerClass implements contr
                     );
                     hojaDeVidaTableClass::delete($ids, true);
                 }
-
-                routing::getInstance()->redirect('hojaDeVida', 'index');
+                session::getInstance()->setSuccess("Registro ELiminado");
+                log::register(i18n::__('delete'), hojaDeVidaTableClass::getNameTable());
+                routing::getInstance()->redirect('porcino', 'indexHojaDeVida');
             } else {
-                routing::getInstance()->redirect('hojaDeVida', 'index');
+                routing::getInstance()->redirect('porcino', 'indexHojaDeVida');
             }
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo '<pre>';
-            print_r($exc->getTrace());
-            echo '</pre>';
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
 

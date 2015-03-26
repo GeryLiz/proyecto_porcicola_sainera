@@ -50,9 +50,9 @@ class createHojaDeVidaActionClass extends controllerClass implements controllerA
                 if($genero_porcino == '' or !isset($genero_porcino) or $genero_porcino == null){
                     throw new PDOException(i18n::__(10004, null, 'errors')); 
                 }
-                if($genero_porcino !== 'M' or $genero_porcino !== 'H'){
-                                        throw new PDOException(i18n::__(10003, null, 'errors')); 
-                }
+//                if($genero_porcino !== 'M' or $genero_porcino !== 'H'){
+//                                        throw new PDOException(i18n::__(10003, null, 'errors')); 
+//                }
                  if(!is_numeric($cant_partos)){
                     throw new PDOException(i18n::__(10005, null, 'errors') . ' '. 'en el campo cantidad de partos');
                 }
@@ -64,9 +64,9 @@ class createHojaDeVidaActionClass extends controllerClass implements controllerA
                     throw new PDOException(i18n::__(10004, null, 'errors')); 
                 }
                 
-                if($id_estado !== 'true' or $id_estado !== 'false'){
-                                        throw new PDOException(i18n::__(10003, null, 'errors')); 
-                }
+//                if($id_estado !== 'true' or $id_estado !== 'false'){
+//                                        throw new PDOException(i18n::__(10003, null, 'errors')); 
+//                }
                   if($id_raza== '' or !isset($id_raza) or $id_raza == null){
                     throw new PDOException(i18n::__(10004, null, 'errors')); 
                 }

@@ -7,6 +7,8 @@ dictionary:
     register:             Registrar
     update:               Actualizar
     create:               Insertar
+    delete:               Eliminar
+    view:                 Visualizar
    
     
   credencial:

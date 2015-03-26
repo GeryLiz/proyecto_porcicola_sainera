@@ -22,17 +22,17 @@ class createRazaActionClass extends controllerClass implements controllerActionI
 
                 $desc_raza = request::getInstance()->getPost(razaTableClass::getNameField(razaTableClass::DESCRIPCION, true));
 
-  if($desc_raza == '' or !isset($desc_raza) or $desc_raza == null){
+                if ($desc_raza == '' or ! isset($desc_raza) or $desc_raza == null) {
                     throw new PDOException(i18n::__(10004, null, 'errors'));
                 }
-              
-               
+
+
                 $data = array(
                     razaTableClass::DESCRIPCION => $desc_raza
                 );
 
                 razaTableClass::insert($data);
-                 session::getInstance()->setSuccess("Registro Insertado");
+                session::getInstance()->setSuccess("Registro Insertado");
                 log::register(i18n::__('create'), razaTableClass::getNameTable());
                 routing::getInstance()->redirect('porcino', 'indexRaza');
             } else {
@@ -43,4 +43,5 @@ class createRazaActionClass extends controllerClass implements controllerActionI
             routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
-}    
+
+}
