@@ -60,7 +60,7 @@ class viewVacunacionActionClass extends controllerClass implements controllerAct
 
                 $this->cntPages = detalleVacunacionTableClass::getAllCount($f, true, $lines, $whereCnt);
                 $this->objVacunacion = vacunacionTableClass::getAll($fieldsVacunacion, true, null, null, null, null, $whereVacunacion);
-                $this->objDetalleVacunacion = detalleVacunacionTableClass::getAll($fields, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+                $this->objDetalleVacunacion = detalleVacunacionTableClass::getAll($fields, true, $orderBy, 'ASC', 10, $page, $where);
                 $this->defineView('view', 'vacunacion', session::getInstance()->getFormatOutput());
             } else {
                 session::getInstance()->setError('pailas');

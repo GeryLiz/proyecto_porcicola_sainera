@@ -10,7 +10,7 @@ config::setDbDriver('pgsql'); // pgsql
 config::setDbName('proyecto_final');
 config::setDbPort(5432); // 5432
 config::setDbUser('postgres');
-config::setDbPassword('diaz');
+config::setDbPassword('sena');
 // Esto solo es necesario en caso de necesitar un socket para la DB
 config::setDbUnixSocket(null);
 

@@ -19,6 +19,13 @@ dictionary:
     confirmDeleteMasive:  Confirmar Eliminado Masivo
     want to delete the record?: ¿Desea eliminar el Registro?
     action:               Acciones
+    confirmDelete:        Confirmar ELiminar
+    new:                  Nuevo
+    remove:               Eliminar
+    report:               Reporte
+    filterBy:             Filtrar Por
+    filters:              Filtros
+    removeFilters:        Eliminar Filtros
         
   credencial:
     new:                 NUEVA CREDENCIAL
@@ -51,7 +58,7 @@ dictionary:
     newVaccination:      NUEVA VACUNACION
     editVaccination:     EDITAR LA VACUNACION
     vaccination:         VACUNACION
-    id_doc:              Id del documento
+    id_doc:              Id del Documento
     date:                Fecha
     user:                Usuario
     

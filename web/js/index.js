@@ -14,6 +14,12 @@ function eliminar(id, variable, url) {
     });
 }
 
+function detalle(){
+    $()
+//    $.ajax({
+//        
+//    });
+}
 
 
 

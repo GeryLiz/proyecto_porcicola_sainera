@@ -166,6 +166,16 @@ vacunacion:
     credentials:
       - [admin]
       
+  reportVacunacion:
+    security: true
+    credentials:
+      - [admin]
+      
+  viewVacunacion:
+    security: true
+    credentials:
+      - [admin]
+      
   indexDetalleVacunacion:
     security: true
     credentials:

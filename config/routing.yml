@@ -775,6 +775,8 @@ vacunacion_delete:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
 
 vacunacion_deleteSelect:
   url:    /vacunacion/eliminarSeleccion
@@ -786,6 +788,23 @@ vacunacion_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
 
     - model/bitacoraTableClass.php
+
+vacunacion_reporte:
+  url:    /vacunacion/reporte
+  param:  { module: vacunacion, action: reportVacunacion, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
+    
+vacunacion_deleteFiltersVacunacion:
+  url:     /borrar_filtros
+  param: { module: vacunacion, action: deleteFiltersVacunacion, format: html }
 
 vacunacion_view:
   url:    /vacunacion/vista
