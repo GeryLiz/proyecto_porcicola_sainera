@@ -1,9 +1,7 @@
 homepage:
   url:    /
-  param:  { module: default, action: index, format: html }
-  load:
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.php
+  param:  { module: home, action: index, format: html }
+
 
 ##-------------------------- shfSecurity --------------------------##
 shfSecurity_index:
@@ -834,6 +832,12 @@ detalleVacunacion_create:
   load:
     - model/base/detalleVacunacionBaseTableClass.php
     - model/detalleVacunacionTableClass.php
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/hojaDeVidaBaseTableClass.php
+    - model/hojaDeVidaTableClass.php
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php

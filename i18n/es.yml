@@ -2,6 +2,8 @@
 culture:                  Español
 dictionary:
   default:
+    module:               Modulos
+    Vacunation:           Vacunacion
     user:                 Usuario
     pass:                 Contraseña
     register:             Registrar
@@ -16,6 +18,7 @@ dictionary:
     create:               Crear
     confirmDeleteMasive:  Confirmar Eliminado Masivo
     want to delete the record?: ¿Desea eliminar el Registro?
+    action:               Acciones
         
   credencial:
     new:                 NUEVA CREDENCIAL
@@ -48,6 +51,9 @@ dictionary:
     newVaccination:      NUEVA VACUNACION
     editVaccination:     EDITAR LA VACUNACION
     vaccination:         VACUNACION
+    id_doc:              Id del documento
+    date:                Fecha
+    user:                Usuario
     
   detalleFacturaCompraInsumo:
     newDetailBillPurchaseInput:  Nuevo Detalle de Factura de Compra de Insumo

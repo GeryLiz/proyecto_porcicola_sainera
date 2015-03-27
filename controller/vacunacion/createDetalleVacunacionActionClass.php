@@ -36,13 +36,13 @@ class createDetalleVacunacionActionClass extends controllerClass implements cont
                     detalleVacunacionTableClass::ID_INSUMO => $id_insumo,
                     detalleVacunacionTableClass::CANTIDAD => $cantidad
                 );
-
+//                print_r($data);
                 detalleVacunacionTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('registerInsert'));
                 log::register(i18n::__('create'), detalleVacunacionTableClass::getNameTable());
-                routing::getInstance()->redirect('vacunacion', 'indexDetalleVacunacion');
+                routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
             } else {
-                routing::getInstance()->redirect('vacunacion', 'indexDetalleVacunacion');
+                routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
             }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
