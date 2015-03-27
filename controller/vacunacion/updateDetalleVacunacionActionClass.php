@@ -7,13 +7,14 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class updateActionClass extends controllerClass implements controllerActionInterface {
+class updateDetalleVacunacionActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
@@ -32,20 +33,19 @@ class updateActionClass extends controllerClass implements controllerActionInter
                     detalleVacunacionTableClass::ID => $id
                 );
                 $data = array(
-                detalleVacunacionTableClass::ID_DOC => $id_doc,
+                    detalleVacunacionTableClass::ID_DOC => $id_doc,
                     ciudadTableClass::DEPARTAMENTO => $id_departamento
                 );
 
-                ciudadTableClass::update($ids, $data);
+                detalleVacunacionTableClass::update($ids, $data);
+                session::getInstance()->setSuccess(i18n::__('registerUpdate'));
+                log::register(i18n::__('update'), detalleVacunacionTableClass::getNameTable());
             }
 
-            routing::getInstance()->redirect('ciudad', 'index');
+            routing::getInstance()->redirect('vacunacion', 'indexDetalleVacunacion');
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo '<pre>';
-            print_r($exc->getTrace());
-            echo '</pre>';
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
 

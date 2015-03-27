@@ -99,7 +99,7 @@ class createHojaDeVidaActionClass extends controllerClass implements controllerA
                 );
 
                 hojaDeVidaBaseTableClass::insert($data);
-                session::getInstance()->setSuccess("Registro Insertado");
+                session::getInstance()->setSuccess(i18n::__('registerInsert'));
                 log::register(i18n::__('create'), hojaDeVidaTableClass::getNameTable());
                 routing::getInstance()->redirect('porcino', 'indexHojaDeVida');
             } else {

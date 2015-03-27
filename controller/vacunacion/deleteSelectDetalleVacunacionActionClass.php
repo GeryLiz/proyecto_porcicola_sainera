@@ -1,4 +1,4 @@
-l<?php
+<?php
 
 use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
@@ -14,7 +14,7 @@ use hook\log\logHookClass as log;
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class deleteSelectHojaDeVidaActionClass extends controllerClass implements controllerActionInterface {
+class deleteSelectDetalleVacunacionActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
@@ -24,15 +24,16 @@ class deleteSelectHojaDeVidaActionClass extends controllerClass implements contr
 
                 foreach ($idsToDelete as $id) {
                     $ids = array(
-                        hojaDeVidaTableClass::ID => $id
+                        detalleVacunacionTableClass::ID => $id
                     );
-                    hojaDeVidaTableClass::delete($ids, true);
+                    detalleVacunacionTableClass::delete($ids, true);
                 }
+
+                routing::getInstance()->redirect('vacunacion', 'indexDetalleVacunacion');
                 session::getInstance()->setSuccess(i18n::__('massDeleteRegister'));
-                log::register(i18n::__('deleteMass'), hojaDeVidaTableClass::getNameTable());
-                routing::getInstance()->redirect('porcino', 'indexHojaDeVida');
+                log::register(i18n::__('deleteMass'), detalleVacunacionTableClass::getNameTable());
             } else {
-                routing::getInstance()->redirect('porcino', 'indexHojaDeVida');
+                routing::getInstance()->redirect('vacunacion', 'indexDetalleVacunacion');
             }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

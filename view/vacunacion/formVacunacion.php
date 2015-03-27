@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-4offset-3">
-<form method="post" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', ((isset($objVacunacion)) ? 'update' : 'create' )) ?>">
+<form method="post" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', ((isset($objVacunacion)) ? 'updateVacunacion' : 'createVacunacion' )) ?>">
   <?php if(isset($objVacunacion) == true): ?>
     <input name="<?php echo vacunacionTableClass::getNameField(vacunacionTableClass::ID, true) ?>" value="<?php echo $objVacunacion[0]->id?>" type="hidden">
   <?php endif ?>
@@ -35,8 +35,8 @@
   </tr>
   </table>
 </form>
-</div>
-</div>
+    </div>
+  </div>
 </div>
 
 

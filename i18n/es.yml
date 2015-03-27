@@ -6,11 +6,17 @@ dictionary:
     pass:                 Contraseña
     register:             Registrar
     update:               Actualizar
-    create:               Insertar
-    delete:               Eliminar
+    registerUpdate:       Registro Actualizado
     view:                 Visualizar
-   
-    
+    registerInsert:       Registro Insertado 
+    delete:               Eliminar
+    registerDelete:       Registro Eliminado
+    deleteMass:           ELiminar Masivo
+    massDeleteRegister:   ELiminar Registros en Masa
+    create:               Crear
+    confirmDeleteMasive:  Confirmar Eliminado Masivo
+    want to delete the record?: ¿Desea eliminar el Registro?
+        
   credencial:
     new:                 NUEVA CREDENCIAL
     name:                Nombre
@@ -41,6 +47,7 @@ dictionary:
   vacunacion:
     newVaccination:      NUEVA VACUNACION
     editVaccination:     EDITAR LA VACUNACION
+    vaccination:         VACUNACION
     
   detalleFacturaCompraInsumo:
     newDetailBillPurchaseInput:  Nuevo Detalle de Factura de Compra de Insumo
@@ -55,6 +62,7 @@ dictionary:
     editDetailVaccination:       EDITAR EL DETALLE DE VACUNACION
     id_document:                 Id Documento
     insumo:                      Id Insumo
+    detailVaccination:           DETALLE VACUNACION
     
   facturaCompraInsumo:  
     newBillPurchaseInput:        Nueva Factura de Compra de Insumo 

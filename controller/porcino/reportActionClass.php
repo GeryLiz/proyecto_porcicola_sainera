@@ -12,7 +12,9 @@ class reportActionClass extends controllerClass implements controllerActionInter
 
     public function execute() {
         try {
-            $this->mensaje = 'Hola a todos';
+            
+            $this->objHojaDeVida = hojaDeVidaTableClass::getAll($fields);
+                    
             $this->defineView('index', 'hojaDeVida', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
            echo $exc->getMessage();

@@ -7,13 +7,14 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
+class deleteSelectVacunacionActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
@@ -23,21 +24,19 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
 
                 foreach ($idsToDelete as $id) {
                     $ids = array(
-                        detalleVacunacionTableClass::ID => $id
+                        vacunacionTableClass::ID => $id
                     );
-                    detalleVacunacionTableClass::delete($ids, true);
+                    vacunacionTableClass::delete($ids, true);
                 }
-
-                routing::getInstance()->redirect('detalleVacunacion', 'index');
+                session::getInstance()->setSuccess(i18n::__('massDeleteRegister'));
+                log::register(i18n::__('deleteMass'), vacunacionTableClass::getNameTable());
+                routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
             } else {
-                routing::getInstance()->redirect('detalleVacunacion', 'index');
+                routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
             }
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo '<pre>';
-            print_r($exc->getTrace());
-            echo '</pre>';
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
 

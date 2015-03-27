@@ -13,7 +13,7 @@ use mvc\i18n\i18nClass as i18n;
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class updateActionClass extends controllerClass implements controllerActionInterface {
+class updateVacunacionActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
@@ -22,7 +22,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $id = request::getInstance()->getPost(vacunacionTableClass::getNameField(vacunacionTableClass::ID, true));
                 $fecha = request::getInstance()->getPost(vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true));
                 $usuario_id = request::getInstance()->getPost(vacunacionTableClass::getNameField(vacunacionTableClass::USUARIO_ID, true));
-               
+
 
 
 
@@ -30,26 +30,21 @@ class updateActionClass extends controllerClass implements controllerActionInter
                     vacunacionTableClass::ID => $id
                 );
                 $data = array(
-                vacunacionTableClass::FECHA => $fecha,
-                vacunacionTableClass::USUARIO_ID => $usuario_id
-
-);
+                    vacunacionTableClass::FECHA => $fecha,
+                    vacunacionTableClass::USUARIO_ID => $usuario_id
+                );
                 vacunacionTableClass::update($ids, $data);
 
-//                departamentoTableClass::update($ids, $data);
-                            routing::getInstance()->redirect('vacunacion', 'index');
-
+                session::getInstance()->setSuccess(i18n::__('registerUpdate'));
+                log::register(i18n::__('update'), detalleVacunacionTableClass::getNameTable());
+                routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
             }
 
             routing::getInstance()->redirect('vacunacion', 'index');
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo '<pre>';
-            print_r($exc->getTrace());
-            echo '</pre>';
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
 
 }
-

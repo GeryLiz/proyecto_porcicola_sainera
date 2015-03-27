@@ -123,3 +123,81 @@ porcino:
     security: true
     credentials:
       - [admin]
+      
+  report:
+    security: true
+    credentials:
+      - [admin]
+      
+vacunacion:
+  indexVacunacion:
+    security: true
+    credentials:
+      - [admin]
+      
+  createVacunacion:
+    security: true
+    credentials:
+      - [admin]
+      
+     
+  insertVacunacion:
+    security: true
+    credentials: 
+      - [admin]
+      
+  editVacunacion:
+    security: true
+    credentials: 
+      - [admin]
+      
+  updateVacunacion:
+    security: true
+    credentials: 
+      - [admin]
+      
+  deleteVacunacion:
+    security: true
+    credentials: 
+      - [admin]
+      
+  deleteSelectVacunacion:
+    security: true
+    credentials:
+      - [admin]
+      
+  indexDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+      
+  createDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+      
+     
+  insertDetalleVacunacion:
+    security: true
+    credentials: 
+      - [admin]
+      
+  editDetalleVacunacion:
+    security: true
+    credentials: 
+      - [admin]
+      
+  updateDetalleVacunacion:
+    security: true
+    credentials: 
+      - [admin]
+      
+  deleteDetalleVacunacion:
+    security: true
+    credentials: 
+      - [admin]
+      
+  deleteSelectDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]

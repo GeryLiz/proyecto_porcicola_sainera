@@ -716,14 +716,23 @@ montar_deleteSelect:
  
 vacunacion_index:
   url:    /vacunacion/index
-  param:  { module: vacunacion, action: index, format: html }
+  param:  { module: vacunacion, action: indexVacunacion, format: html }
   load:
     - model/base/vacunacionBaseTableClass.php
     - model/vacunacionTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/hojaDeVidaBaseTableClass.php
+    - model/hojaDeVidaTableClass.php
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 vacunacion_insert:
   url:    /vacunacion/insertar
-  param:  { module: vacunacion, action: insert, format: html }
+  param:  { module: vacunacion, action: insertVacunacion, format: html }
   load:
     - model/base/vacunacionBaseTableClass.php
     - model/vacunacionTableClass.php
@@ -732,14 +741,17 @@ vacunacion_insert:
 
 vacunacion_create:
   url:    /vacunacion/crear
-  param:  { module: vacunacion, action: create, format: html }
+  param:  { module: vacunacion, action: createVacunacion, format: html }
   load:
     - model/base/vacunacionBaseTableClass.php
     - model/vacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 vacunacion_edit:
   url:    /vacunacion/editar
-  param:  { module: vacunacion, action: edit, format: html }
+  param:  { module: vacunacion, action: editVacunacion, format: html }
   load:
     - model/base/vacunacionBaseTableClass.php
     - model/vacunacionTableClass.php
@@ -748,38 +760,63 @@ vacunacion_edit:
 
 vacunacion_update:
   url:    /vacunacion/actualizar
-  param:  { module: vacunacion, action: update, format: html }
+  param:  { module: vacunacion, action: updateVacunacion, format: html }
   load:
     - model/base/vacunacionBaseTableClass.php
     - model/vacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 vacunacion_delete:
   url:    /vacunacion/eliminar
-  param:  { module: vacunacion, action: delete, format: json }
+  param:  { module: vacunacion, action: deleteVacunacion, format: json }
   load:
     - model/base/vacunacionBaseTableClass.php
     - model/vacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 vacunacion_deleteSelect:
   url:    /vacunacion/eliminarSeleccion
-  param:  { module: vacunacion, action: deleteSelect, format: html }
+  param:  { module: vacunacion, action: deleteSelectVacunacion, format: html }
   load:
     - model/base/vacunacionBaseTableClass.php
     - model/vacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+
+    - model/bitacoraTableClass.php
+
+vacunacion_view:
+  url:    /vacunacion/vista
+  param:  { module: vacunacion, action: viewVacunacion, format: html }
+  load:
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
     
+
     
-##---------------------------------------------------------------------##
- 
 detalleVacunacion_index:
   url:    /detalleVacunacion/index
-  param:  { module: detalleVacunacion, action: index, format: html }
+  param:  { module: vacunacion, action: indexDetalleVacunacion, format: html }
   load:
     - model/base/detalleVacunacionBaseTableClass.php
     - model/detalleVacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
 
 detalleVacunacion_insert:
   url:    /detalleVacunacion/insertar
-  param:  { module: detalleVacunacion, action: insert, format: html }
+  param:  { module: vacunacion, action: insertDetalleVacunacion, format: html }
   load:
     - model/base/detalleVacunacionBaseTableClass.php
     - model/detalleVacunacionTableClass.php
@@ -793,15 +830,18 @@ detalleVacunacion_insert:
 
 detalleVacunacion_create:
   url:    /detalleVacunacion/crear
-  param:  { module: detalleVacunacion, action: create, format: html }
+  param:  { module: vacunacion, action: createDetalleVacunacion, format: html }
   load:
     - model/base/detalleVacunacionBaseTableClass.php
     - model/detalleVacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 
 detalleVacunacion_edit:
   url:    /detalleVacunacion/editar
-  param:  { module: detalleVacunacion, action: edit, format: html }
+  param:  { module: vacunacion, action: editDetalleVacunacion, format: html }
   load:
     - model/base/detalleVacunacionBaseTableClass.php
     - model/detalleVacunacionTableClass.php
@@ -814,25 +854,33 @@ detalleVacunacion_edit:
 
 detalleVacunacion_update:
   url:    /detalleVacunacion/actualizar
-  param:  { module: detalleVacunacion, action: update, format: html }
+  param:  { module: vacunacion, action: updateDetalleVacunacion, format: html }
   load:
     - model/base/detalleVacunacionBaseTableClass.php
     - model/detalleVacunacionTableClass.php
-    
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 detalleVacunacion_delete:
   url:    /detalleVacunacionFacturaCompraInsumo/eliminar
-  param:  { module: detalleVacunacion, action: delete, format: json }
+  param:  { module: vacunacion, action: deleteDetalleVacunacion, format: json }
   load:
     - model/base/detalleVacunacionBaseTableClass.php
     - model/detalleVacunacionTableClass.php
-
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
 detalleVacunacion_deleteSelect:
   url:    /detalleVacunacion/eliminarSeleccion
-  param:  { module: detalleVacunacion, action: deleteSelect, format: html }
+  param:  { module: vacunacion, action: deleteSelectDetalleVacunacion, format: html }
   load:
     - model/base/detalleVacunacionBaseTableClass.php
     - model/detalleVacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
     
 ##---------------------------------------------------------------------##

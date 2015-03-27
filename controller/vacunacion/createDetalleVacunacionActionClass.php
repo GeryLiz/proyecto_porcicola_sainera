@@ -7,19 +7,20 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class createActionClass extends controllerClass implements controllerActionInterface {
+class createDetalleVacunacionActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-                
+
                 $id_doc = request::getInstance()->getPost(detalleVacunacionTableClass::getNameField(detalleVacunacionTableClass::ID_DOC, true));
                 $id_porcino = request::getInstance()->getPost(detalleVacunacionTableClass::getNameField(detalleVacunacionTableClass::ID_PORCINO, true));
                 $id_insumo = request::getInstance()->getPost(detalleVacunacionTableClass::getNameField(detalleVacunacionTableClass::ID_INSUMO, true));
@@ -30,23 +31,22 @@ class createActionClass extends controllerClass implements controllerActionInter
 
 
                 $data = array(
-                detalleVacunacionTableClass::ID_DOC => $id_doc,
-                detalleVacunacionTableClass::ID_PORCINO => $id_porcino,
-                detalleVacunacionTableClass::ID_INSUMO => $id_insumo,
-                detalleVacunacionTableClass::CANTIDAD => $cantidad
+                    detalleVacunacionTableClass::ID_DOC => $id_doc,
+                    detalleVacunacionTableClass::ID_PORCINO => $id_porcino,
+                    detalleVacunacionTableClass::ID_INSUMO => $id_insumo,
+                    detalleVacunacionTableClass::CANTIDAD => $cantidad
                 );
 
                 detalleVacunacionTableClass::insert($data);
-                routing::getInstance()->redirect('detalleVacunacion', 'index');
+                session::getInstance()->setSuccess(i18n::__('registerInsert'));
+                log::register(i18n::__('create'), detalleVacunacionTableClass::getNameTable());
+                routing::getInstance()->redirect('vacunacion', 'indexDetalleVacunacion');
             } else {
-                routing::getInstance()->redirect('detalleVacunaciion', 'index');
+                routing::getInstance()->redirect('vacunacion', 'indexDetalleVacunacion');
             }
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo '<pre>';
-            print_r($exc->getTrace());
-            echo '</pre>';
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
 
