@@ -18,11 +18,11 @@ class insertVacunacionActionClass extends controllerClass implements controllerA
     public function execute() {
         try {
             $fieldsUsuario = array(
-                usuarioTableClass::ID,
-                usuarioTableClass::USER
+            empleadoTableClass::ID,
+            empleadoTableClass::NOMBRE
             );
-
-            $this->objUsuario = usuarioTableClass::getAll($fieldsUsuario, true);
+            
+            $this->objUsuario = empleadoTableClass::getAll($fieldsUsuario, true);
             $this->defineView('insert', 'vacunacion', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

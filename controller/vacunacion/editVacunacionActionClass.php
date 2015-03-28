@@ -28,11 +28,11 @@ class editVacunacionActionClass extends controllerClass implements controllerAct
                 );
 
                 $fieldsUsuario = array(
-                    usuarioTableClass::ID,
-                    usuarioTableClass::USER
+                empleadoTableClass::ID,
+                empleadoTableClass::NOMBRE
                 );
 
-                $this->objUsuario = usuarioTableClass::getAll($fieldsUsuario, true);
+                $this->objUsuario = empleadoTableClass::getAll($fieldsUsuario, true);
                 $this->objVacunacion = vacunacionTableClass::getAll($fields, true, null, null, null, null, $where);
                 $this->defineView('edit', 'vacunacion', session::getInstance()->getFormatOutput());
             } else {

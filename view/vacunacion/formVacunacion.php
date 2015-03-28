@@ -1,7 +1,7 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
-<?php $nombreUsuario = usuarioTableClass::USER ?>
-<?php $idUsuario = usuarioTableClass::ID ?>
+<?php $nombreUsuario = empleadoTableClass::NOMBRE?>
+<?php $idUsuario = empleadoTableClass::ID ?>
 <div class="container">
     <div class="row">
         <div class="col-xs-4offset-3">

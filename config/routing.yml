@@ -648,7 +648,7 @@ hojaDeVida_reporte:
     - libs/fpdf/fpdf.php
     
 hojaDeVida_deleteFilters:
-  url:     /borrar_filtros
+  url:     /borrar_filtros/hojaDeVida
   param: { module: porcino, action: deleteFilters, format: html }
     
 ##---------------------------------------------------------------------##
@@ -727,6 +727,8 @@ vacunacion_index:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
 
 vacunacion_insert:
   url:    /vacunacion/insertar
@@ -734,8 +736,8 @@ vacunacion_insert:
   load:
     - model/base/vacunacionBaseTableClass.php
     - model/vacunacionTableClass.php
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
 
 vacunacion_create:
   url:    /vacunacion/crear
@@ -753,8 +755,8 @@ vacunacion_edit:
   load:
     - model/base/vacunacionBaseTableClass.php
     - model/vacunacionTableClass.php
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
 
 vacunacion_update:
   url:    /vacunacion/actualizar
@@ -803,7 +805,7 @@ vacunacion_reporte:
     - model/detalleVacunacionTableClass.php
     
 vacunacion_deleteFiltersVacunacion:
-  url:     /borrar_filtros
+  url:     /borrar_filtros/vacunacion
   param: { module: vacunacion, action: deleteFiltersVacunacion, format: html }
 
 vacunacion_view:

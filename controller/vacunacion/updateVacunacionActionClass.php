@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
@@ -36,7 +37,7 @@ class updateVacunacionActionClass extends controllerClass implements controllerA
                 vacunacionTableClass::update($ids, $data);
 
                 session::getInstance()->setSuccess(i18n::__('registerUpdate'));
-                log::register(i18n::__('update'), detalleVacunacionTableClass::getNameTable());
+                log::register(i18n::__('update'), vacunacionTableClass::getNameTable());
                 routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
             }
 
